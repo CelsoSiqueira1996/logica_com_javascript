@@ -1,0 +1,67 @@
+<meta charset="UTF-8">
+
+<input class="entrada-usuario" placeholder="Entre com seu chute...">
+<button class="botao-compara">Compare com o meu segredo</button>
+<script>
+
+    function sorteia() {
+
+        return Math.round(Math.random() * 10);
+
+    }
+
+    function sorteiaNumeros(quantidade) {
+
+        var achou = false;
+        var segredos = [];
+
+        for(var contador = 1; contador <= quantidade; contador++) {
+            do {
+                achou = false;
+                var numeroAleatorio = sorteia();
+                for(var elemento = 0; elemento < segredos.length; elemento++) {
+                    if(numeroAleatorio == segredos[elemento]) {
+                        achou = true;
+                        break;
+                    }
+                }
+            } while(achou)
+            segredos.push(numeroAleatorio);
+        }
+
+        return segredos;
+
+    }
+
+    var segredo = Math.round(Math.random() * 10);
+    var segredos = sorteiaNumeros(5);
+
+    var input = document.querySelector('.entrada-usuario');
+    input.focus();
+
+    function verifica() {
+
+        for(var posicao = 0; posicao < segredos.length; posicao++) {
+            var achou = false;
+            if(input.value == segredos[posicao]) {
+                alert("Você acertou!");
+                achou = true;
+                break;
+            }
+        }
+
+        if(!achou) {
+            alert("Você errou!");
+        }
+
+        input.value = "";
+        input.focus();
+
+    }
+    
+    var button = document.querySelector('.botao-compara');
+    button.onclick = verifica; //ao colocar parênteses na frente de verifica eu executo ela.
+    //não colocando parênteses eu só associo o conteúdo dela no button.onclick.
+    //assim, ela só será executada no clique do botão.
+
+</script>

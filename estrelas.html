@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pularLinha() {
+        document.write("<br><br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pularLinha();
+    }
+
+    var contadorLinhas = 1;
+    var contadorColunas = 0;
+    var mensagem = "";
+
+    while(contadorLinhas <= 3) {
+        contadorColunas = 1;
+        while(contadorColunas <= 10) {
+            mensagem += "*";
+            contadorColunas++;
+        }
+        mensagem += "<br>";
+        contadorLinhas++;
+    }
+
+    mostra(mensagem);
+    mostra("FIM");
+
+</script>

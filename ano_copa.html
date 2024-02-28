@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pularLinha() {
+        document.write("<br><br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pularLinha();
+    }
+
+    var limite = parseInt(prompt("Entre com a data limite: "));
+    var anoCopa = 1930;
+
+    do {
+        if(anoCopa == 1942 || anoCopa == 1946) {
+            mostra("No ano de " + anoCopa + " não houve copa do mundo por conta da guerra!");
+        } else {
+            mostra("Teve copa em " + anoCopa);
+        }
+        anoCopa += 4;
+    }while(anoCopa <= limite)
+
+    mostra("FIM");
+
+</script>

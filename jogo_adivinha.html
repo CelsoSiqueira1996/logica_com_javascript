@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pularLinha() {
+        document.write("<br><br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pularLinha();
+    }
+
+    function sorteia(n) {
+        var numeroSorteado = Math.round(Math.random() * n);
+        return numeroSorteado;
+    }
+
+    var range = parseInt(prompt("Escolha o range (0 - ?): "));
+    var numeroPensado = sorteia(range);
+
+    var chute = parseInt(prompt("Digite seu chute: "));
+
+    while(chute != numeroPensado){
+        if(chute > numeroPensado) {
+            alert("Você errou! O número pensado é menor que seu chute.");
+        } else {
+            alert("Você errou! O número pensado é maior que seu chute.");
+        }
+        chute = parseInt(prompt("Digite outro chute: "));
+    }
+
+    mostra("Você acertou! Parabéns!");
+
+</script>

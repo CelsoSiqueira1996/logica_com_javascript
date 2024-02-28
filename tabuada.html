@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pularLinha() {
+        document.write("<br><br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pularLinha();
+    }
+
+    var numero = parseInt(prompt("Informe o número para a tabuada: "));
+    var limite = parseInt(prompt("Informe o limite para a tabuada: "));
+
+    for(var contador = 1; contador <= limite; contador++) {
+        mostra(numero + "*" + contador + " = " + numero*contador);
+    }
+
+    mostra("FIM");
+
+</script>
